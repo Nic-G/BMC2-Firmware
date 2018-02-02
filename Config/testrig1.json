@@ -1,0 +1,23 @@
+{
+	"devices" : 
+	[
+		{
+			"deviceId" : 1,
+			"enabled" : false,
+			"name" : "front_right_knee",
+			"notes" : "",
+			"uid1" : 2883616,
+			"uid2" : 1650753082,
+            "motorKv" : 335.0
+		},
+		{
+			"deviceId" : 2,
+			"enabled" : false,
+			"name" : "front_right_pitch",
+			"notes" : "",
+			"uid1" : 2818072,
+			"uid2" : 1650753082,
+            "motorKv" : 335.0
+		}
+	]
+}

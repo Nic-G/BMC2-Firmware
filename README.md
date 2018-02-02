@@ -82,6 +82,8 @@ Method 2:
 
 ![setup tab screenshot](resources/UI_motor_setup.png "Motor setup tab in UI")
 
+If a motor displays a fault (also indicated by a flashing amber light on the PCB), you may be able to clear it by changing the controller State to Reset in the Motor Setup tab.
+
 The motor(s) may now be controlled via ROS if you wish, further details for that are in the [Dogbot repo]
 
 # Useful Tools
