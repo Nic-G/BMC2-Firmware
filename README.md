@@ -10,9 +10,11 @@ Corresponding higher-level ROS control software, along with CAD packages and oth
 # Installation
 
 ## Pre-requisites
-[Qt] is required to build and run the UI, it was built and tested with Qt version 5.9.2 64-bit.
+[Qt] is required to build and run the UI, it was built and tested with Qt version 5.9.2 64-bit.  Download from https://www.qt.io/download
 
 The software was developed and has been tested on Linux Ubuntu 16.04
+
+You may need to install the following packages: `libspdlog-dev, libzmq-dev, libzmqpp-dev`
 
 ## Setup steps
 To use USB you need access to the appropriate device:
@@ -23,9 +25,17 @@ sudo udevadm control --reload-rules && udevadm trigger
 ```
 There is a [configuration file](./Config/configexample.json): to enable the ROS components in the [Dogbot repo] to access this it should be copied into ~/.config/DogBot
 
-The code under [API](./API) should be built with `cmake --build` and `make install`. There is a script to wrap these steps at [buildall.sh](./Scripts/buildall.sh)
+The code under [API](./API) should be built with `cmake --build` and `make install`:
+```bat
+cd API
+mkdir -p build
+cd build
+cmake ..
+cmake --build .
+sudo make install 
+```
 
-There is an installation script at [setup.sh](./Scripts/setup.sh), calling it as `setup.sh 1` also calls the build script.
+There is a script to wrap the build steps at [buildall.sh](./Scripts/buildall.sh); there is an installation script at [setup.sh](./Scripts/setup.sh), calling it as `setup.sh 1` also calls the build script.
 
 # Operation
 
@@ -33,7 +43,7 @@ Please refer to the product user-guide for warnings and safety considerations.
 
 ## Switch On
 
-Use a benchtop power supply of between 14V and 30V
+Use a benchtop power supply of between 14V and 30V, and capable of supplying around 5A
 
 * Check cables are red-red throughout; check for loose wires, obstructions
 * Connect power supply
